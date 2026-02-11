@@ -31,10 +31,10 @@ EOT
     resource_group_name = string
     task_type           = string
     time_zone_id        = string
-    status              = optional(string, "Disabled")
+    status              = optional(string) # Default: "Disabled"
     tags                = optional(map(string))
     notification_settings = object({
-      status          = optional(string, "Disabled")
+      status          = optional(string) # Default: "Disabled"
       time_in_minutes = optional(number)
       webhook_url     = optional(string)
     })
