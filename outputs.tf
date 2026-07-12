@@ -1,53 +1,49 @@
-output "dev_test_schedules" {
-  description = "All dev_test_schedule resources"
-  value       = azurerm_dev_test_schedule.dev_test_schedules
-}
 output "dev_test_schedules_daily_recurrence" {
-  description = "List of daily_recurrence values across all dev_test_schedules"
-  value       = [for k, v in azurerm_dev_test_schedule.dev_test_schedules : v.daily_recurrence]
+  description = "Map of daily_recurrence values across all dev_test_schedules, keyed the same as var.dev_test_schedules"
+  value       = { for k, v in azurerm_dev_test_schedule.dev_test_schedules : k => v.daily_recurrence }
 }
 output "dev_test_schedules_hourly_recurrence" {
-  description = "List of hourly_recurrence values across all dev_test_schedules"
-  value       = [for k, v in azurerm_dev_test_schedule.dev_test_schedules : v.hourly_recurrence]
+  description = "Map of hourly_recurrence values across all dev_test_schedules, keyed the same as var.dev_test_schedules"
+  value       = { for k, v in azurerm_dev_test_schedule.dev_test_schedules : k => v.hourly_recurrence }
 }
 output "dev_test_schedules_lab_name" {
-  description = "List of lab_name values across all dev_test_schedules"
-  value       = [for k, v in azurerm_dev_test_schedule.dev_test_schedules : v.lab_name]
+  description = "Map of lab_name values across all dev_test_schedules, keyed the same as var.dev_test_schedules"
+  value       = { for k, v in azurerm_dev_test_schedule.dev_test_schedules : k => v.lab_name }
 }
 output "dev_test_schedules_location" {
-  description = "List of location values across all dev_test_schedules"
-  value       = [for k, v in azurerm_dev_test_schedule.dev_test_schedules : v.location]
+  description = "Map of location values across all dev_test_schedules, keyed the same as var.dev_test_schedules"
+  value       = { for k, v in azurerm_dev_test_schedule.dev_test_schedules : k => v.location }
 }
 output "dev_test_schedules_name" {
-  description = "List of name values across all dev_test_schedules"
-  value       = [for k, v in azurerm_dev_test_schedule.dev_test_schedules : v.name]
+  description = "Map of name values across all dev_test_schedules, keyed the same as var.dev_test_schedules"
+  value       = { for k, v in azurerm_dev_test_schedule.dev_test_schedules : k => v.name }
 }
 output "dev_test_schedules_notification_settings" {
-  description = "List of notification_settings values across all dev_test_schedules"
-  value       = [for k, v in azurerm_dev_test_schedule.dev_test_schedules : v.notification_settings]
+  description = "Map of notification_settings values across all dev_test_schedules, keyed the same as var.dev_test_schedules"
+  value       = { for k, v in azurerm_dev_test_schedule.dev_test_schedules : k => v.notification_settings }
 }
 output "dev_test_schedules_resource_group_name" {
-  description = "List of resource_group_name values across all dev_test_schedules"
-  value       = [for k, v in azurerm_dev_test_schedule.dev_test_schedules : v.resource_group_name]
+  description = "Map of resource_group_name values across all dev_test_schedules, keyed the same as var.dev_test_schedules"
+  value       = { for k, v in azurerm_dev_test_schedule.dev_test_schedules : k => v.resource_group_name }
 }
 output "dev_test_schedules_status" {
-  description = "List of status values across all dev_test_schedules"
-  value       = [for k, v in azurerm_dev_test_schedule.dev_test_schedules : v.status]
+  description = "Map of status values across all dev_test_schedules, keyed the same as var.dev_test_schedules"
+  value       = { for k, v in azurerm_dev_test_schedule.dev_test_schedules : k => v.status }
 }
 output "dev_test_schedules_tags" {
-  description = "List of tags values across all dev_test_schedules"
-  value       = [for k, v in azurerm_dev_test_schedule.dev_test_schedules : v.tags]
+  description = "Map of tags values across all dev_test_schedules, keyed the same as var.dev_test_schedules"
+  value       = { for k, v in azurerm_dev_test_schedule.dev_test_schedules : k => v.tags }
 }
 output "dev_test_schedules_task_type" {
-  description = "List of task_type values across all dev_test_schedules"
-  value       = [for k, v in azurerm_dev_test_schedule.dev_test_schedules : v.task_type]
+  description = "Map of task_type values across all dev_test_schedules, keyed the same as var.dev_test_schedules"
+  value       = { for k, v in azurerm_dev_test_schedule.dev_test_schedules : k => v.task_type }
 }
 output "dev_test_schedules_time_zone_id" {
-  description = "List of time_zone_id values across all dev_test_schedules"
-  value       = [for k, v in azurerm_dev_test_schedule.dev_test_schedules : v.time_zone_id]
+  description = "Map of time_zone_id values across all dev_test_schedules, keyed the same as var.dev_test_schedules"
+  value       = { for k, v in azurerm_dev_test_schedule.dev_test_schedules : k => v.time_zone_id }
 }
 output "dev_test_schedules_weekly_recurrence" {
-  description = "List of weekly_recurrence values across all dev_test_schedules"
-  value       = [for k, v in azurerm_dev_test_schedule.dev_test_schedules : v.weekly_recurrence]
+  description = "Map of weekly_recurrence values across all dev_test_schedules, keyed the same as var.dev_test_schedules"
+  value       = { for k, v in azurerm_dev_test_schedule.dev_test_schedules : k => v.weekly_recurrence }
 }
 
