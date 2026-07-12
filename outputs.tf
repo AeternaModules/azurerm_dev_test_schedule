@@ -1,3 +1,7 @@
+output "dev_test_schedules_id" {
+  description = "Map of id values across all dev_test_schedules, keyed the same as var.dev_test_schedules"
+  value       = { for k, v in azurerm_dev_test_schedule.dev_test_schedules : k => v.id }
+}
 output "dev_test_schedules_daily_recurrence" {
   description = "Map of daily_recurrence values across all dev_test_schedules, keyed the same as var.dev_test_schedules"
   value       = { for k, v in azurerm_dev_test_schedule.dev_test_schedules : k => v.daily_recurrence }
