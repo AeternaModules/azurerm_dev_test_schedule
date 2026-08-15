@@ -4,11 +4,11 @@ output "dev_test_schedules_id" {
 }
 output "dev_test_schedules_daily_recurrence" {
   description = "Map of daily_recurrence values across all dev_test_schedules, keyed the same as var.dev_test_schedules"
-  value       = { for k, v in azurerm_dev_test_schedule.dev_test_schedules : k => v.daily_recurrence if v.daily_recurrence != null && length(v.daily_recurrence) > 0 }
+  value       = { for k, v in azurerm_dev_test_schedule.dev_test_schedules : k => one(v.daily_recurrence) if v.daily_recurrence != null && length(v.daily_recurrence) > 0 }
 }
 output "dev_test_schedules_hourly_recurrence" {
   description = "Map of hourly_recurrence values across all dev_test_schedules, keyed the same as var.dev_test_schedules"
-  value       = { for k, v in azurerm_dev_test_schedule.dev_test_schedules : k => v.hourly_recurrence if v.hourly_recurrence != null && length(v.hourly_recurrence) > 0 }
+  value       = { for k, v in azurerm_dev_test_schedule.dev_test_schedules : k => one(v.hourly_recurrence) if v.hourly_recurrence != null && length(v.hourly_recurrence) > 0 }
 }
 output "dev_test_schedules_lab_name" {
   description = "Map of lab_name values across all dev_test_schedules, keyed the same as var.dev_test_schedules"
@@ -24,7 +24,7 @@ output "dev_test_schedules_name" {
 }
 output "dev_test_schedules_notification_settings" {
   description = "Map of notification_settings values across all dev_test_schedules, keyed the same as var.dev_test_schedules"
-  value       = { for k, v in azurerm_dev_test_schedule.dev_test_schedules : k => v.notification_settings if v.notification_settings != null && length(v.notification_settings) > 0 }
+  value       = { for k, v in azurerm_dev_test_schedule.dev_test_schedules : k => one(v.notification_settings) if v.notification_settings != null && length(v.notification_settings) > 0 }
 }
 output "dev_test_schedules_resource_group_name" {
   description = "Map of resource_group_name values across all dev_test_schedules, keyed the same as var.dev_test_schedules"
@@ -48,6 +48,6 @@ output "dev_test_schedules_time_zone_id" {
 }
 output "dev_test_schedules_weekly_recurrence" {
   description = "Map of weekly_recurrence values across all dev_test_schedules, keyed the same as var.dev_test_schedules"
-  value       = { for k, v in azurerm_dev_test_schedule.dev_test_schedules : k => v.weekly_recurrence if v.weekly_recurrence != null && length(v.weekly_recurrence) > 0 }
+  value       = { for k, v in azurerm_dev_test_schedule.dev_test_schedules : k => one(v.weekly_recurrence) if v.weekly_recurrence != null && length(v.weekly_recurrence) > 0 }
 }
 
